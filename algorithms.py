@@ -15,8 +15,8 @@ def GD_array(config, lr = 1.0, momentum = 0.0):
     if config.init == "zero":
         model.linear.weight.data.fill_(0)
 
-    #if config.init == "clone":
-    #    model.load_state_dict(copy.deepcopy(init_model.state_dict()))
+    if config.init == "clone":
+        model.load_state_dict(copy.deepcopy(init_model.state_dict()))
     # random comment
 
     X, y = get_imbalanced_data(config)
